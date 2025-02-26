@@ -76,7 +76,7 @@ def show_entries():
 @app.route('/add', methods=['POST'])
 def add_entry():
     db = get_db()
-    db.execute("insert into entries (title, text, complete) values (?, ?, 'incomplete')"
+    db.execute("insert into entries (title, text, complete) values (?, ?, 'incomplete')",
                [request.form['title'], request.form['text']])
     db.commit()
     flash('New entry was successfully posted')

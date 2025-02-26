@@ -106,7 +106,7 @@ def new_complete():
         db.execute("update entries set complete='incomplete' where id = ?",
                [request.form.get('id')])
     else:
-        db.excecute("update entries set complete= 'complete' where id = ?",
+        db.execute("update entries set complete= 'complete' where id = ?",
                     [request.form.get('id')])
     db.commit()
     flash('The entry was successfully completed!')

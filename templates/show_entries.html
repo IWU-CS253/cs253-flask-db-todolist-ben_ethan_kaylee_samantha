@@ -24,10 +24,10 @@
         <form action="{{ url_for('new_complete') }}" method="post" id="new-complete-{{ entry.id }}">
             <input name="id" value="{{ entry.id }}" type=hidden>
             <input type="checkbox" name="complete" onclick="complete_checkbox('new-complete-{{ entry.id }}')" {% if entry.complete == 'complete' %}checked{% endif %}>
+            {{ entry.title }}
         </form>
+        </h2>
 
-
-          {{ entry.title }} </h2>
           <h4>{{ entry.complete }}</h4>
           {{ entry.text|safe }}
 
